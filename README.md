@@ -41,7 +41,7 @@ const quadric = GLU32.gluNewQuadric();
 // GLU32.gluSphere() was already loaded
 GLU32.gluSphere(quadric, 1.0, 32, 32);
 
-// GLU32.gluNewQuadric() will be loaded here
+// GLU32.gluDeleteQuadric() will be loaded here
 GLU32.gluDeleteQuadric(quadric);
 ```
 
