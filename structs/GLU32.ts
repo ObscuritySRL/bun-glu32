@@ -76,7 +76,7 @@ class GLU32 {
    */
   private static readonly Symbols = {
     gluBeginCurve: { args: [FFIType.ptr], returns: FFIType.void },
-    gluBeginPolygon: { args: [FFIType.ptr, FFIType.ptr], returns: FFIType.void },
+    gluBeginPolygon: { args: [FFIType.ptr], returns: FFIType.void },
     gluBeginSurface: { args: [FFIType.ptr], returns: FFIType.void },
     gluBeginTrim: { args: [FFIType.ptr], returns: FFIType.void },
     gluBuild1DMipmaps: { args: [FFIType.u32, FFIType.i32, FFIType.i32, FFIType.u32, FFIType.u32, FFIType.ptr], returns: FFIType.i32 },
@@ -135,8 +135,8 @@ class GLU32 {
   }
 
   // https://learn.microsoft.com/en-us/windows/win32/opengl/glubeginpolygon
-  public static gluBeginPolygon(tess: GLUtesselator, polygon_data: GLvoid_): void {
-    return GLU32.Load('gluBeginPolygon')(tess, polygon_data);
+  public static gluBeginPolygon(tess: GLUtesselator): void {
+    return GLU32.Load('gluBeginPolygon')(tess);
   }
 
   // https://learn.microsoft.com/en-us/windows/win32/opengl/glubeginsurface

@@ -53,13 +53,22 @@ GLU32.gluDeleteQuadric(quadric);
 - Matrix and sampling helpers like `gluLookAt`, `gluPerspective`, `gluPickMatrix`, and `gluProject`.
 - Buffer-friendly `.ptr` helpers provided by Bun for ArrayBuffer/Buffer/DataView/TypedArray make pointer arguments ergonomic.
 
+## Examples
+
+Run the basic example:
+
+```sh
+bun run example
+```
+
+Run the comprehensive demo (queries GLU info, creates quadrics/tessellators/NURBS, tests projection):
+
+```sh
+bun run demo
+```
+
 ## Notes
 
 - No global initialization is required. Use lazy binding or call `GLU32.Preload()` to bind everything sooner.
 - All GLU helpers expect native floating-point types; `types/GLU32.ts` exposes the precise aliases.
 - Bun runtime on Windows is mandatory.
-
-## TODO
-
-- Add example helpers that manage quadric and tessellation lifetimes.
-- Expand documentation with real-world GLU usage scenarios.
